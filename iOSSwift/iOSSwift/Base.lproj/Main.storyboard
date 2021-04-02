@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ze6-cq-nuP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,7 +8,56 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="ijO-Mf-BEj">
+            <objects>
+                <navigationController id="ze6-cq-nuP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="shW-bB-2fU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fWU-as-dMz" kind="relationship" relationship="rootViewController" id="jbE-3D-kR9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fII-b1-3Zc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1630" y="130"/>
+        </scene>
+        <!--Anúncios-->
+        <scene sceneID="QMO-MG-nKV">
+            <objects>
+                <viewController id="fWU-as-dMz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pAF-vm-Bvv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dC4-eJ-Gbb">
+                                <rect key="frame" x="20" y="108" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.10196078431372549" green="0.45098039215686275" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Banner">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="PrW-ZN-LrL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZJI-Mr-1Z3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dC4-eJ-Gbb" firstAttribute="leading" secondItem="ZJI-Mr-1Z3" secondAttribute="leading" constant="20" id="IOY-m9-DUk"/>
+                            <constraint firstItem="dC4-eJ-Gbb" firstAttribute="top" secondItem="ZJI-Mr-1Z3" secondAttribute="top" constant="20" id="LJE-g2-Zb9"/>
+                            <constraint firstItem="ZJI-Mr-1Z3" firstAttribute="trailing" secondItem="dC4-eJ-Gbb" secondAttribute="trailing" constant="20" id="mPi-w7-dBR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Anúncios" id="2JW-Qm-Mad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ear-LA-a9m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-802" y="129"/>
+        </scene>
+        <!--Banner-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOSSwift" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,6 +81,7 @@
                             <constraint firstItem="xtB-kH-ChT" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="guy-g9-Fgf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Banner" id="wTK-mA-rLC"/>
                     <connections>
                         <outlet property="adBanner" destination="xtB-kH-ChT" id="Nej-b4-AxH"/>
                     </connections>
