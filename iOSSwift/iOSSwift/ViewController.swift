@@ -6,7 +6,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        adBanner.translatesAutoresizingMaskIntoConstraints = false
+        adBanner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        adBanner.rootViewController = self
+        view.addSubview(adBanner)
+        adBanner.load(GADRequest())
     }
 
 
