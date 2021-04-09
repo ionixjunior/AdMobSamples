@@ -24,6 +24,8 @@ namespace AdMobCross.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             _ = Firebase.Core.Configuration.SharedInstance;
+            Google.MobileAds.MobileAds.SharedInstance.Start(null);
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
