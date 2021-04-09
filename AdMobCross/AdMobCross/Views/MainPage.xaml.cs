@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace AdMobCross
+namespace AdMobCross.Views
 {
     public partial class MainPage : ContentPage
     {

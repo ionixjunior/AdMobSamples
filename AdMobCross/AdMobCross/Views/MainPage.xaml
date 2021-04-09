@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AdMobCross.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Anúncios">
+    <StackLayout Margin="20">
+        <Button
+            BackgroundColor="#1A73E8"
+            FontAttributes="Bold"
+            Text="Banner"
+            TextColor="White" />
+    </StackLayout>
+</ContentPage>
