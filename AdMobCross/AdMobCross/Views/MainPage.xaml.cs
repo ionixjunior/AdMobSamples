@@ -14,5 +14,10 @@ namespace AdMobCross.Views
         {
             InitializeComponent();
         }
+
+        private async void OnBannerClicked(object _, EventArgs __)
+        {
+            await Navigation.PushAsync(new BannerView());
+        }
     }
 }
