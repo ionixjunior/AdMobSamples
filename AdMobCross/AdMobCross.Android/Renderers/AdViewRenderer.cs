@@ -22,7 +22,7 @@ namespace AdMobCross.Droid.Renderers
                 var adSize = AdSize.Banner;
                 var adBanner = new Android.Gms.Ads.AdView(Context);
                 adBanner.AdSize = adSize;
-                adBanner.AdUnitId = "ca-app-pub-3940256099942544/6300978111";
+                adBanner.AdUnitId = e.NewElement.AdId;
                 adBanner.LoadAd(new AdRequest.Builder().Build());
                 // TODO considerar avaliar a falha do carregamento para alterar a constraint da altura
 

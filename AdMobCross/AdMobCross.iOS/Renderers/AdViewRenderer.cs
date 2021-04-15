@@ -27,7 +27,7 @@ namespace AdMobCross.iOS.Renderers
                 var adSize = AdSizeCons.Banner;
                 var adBanner = new BannerView(adSize);
                 adBanner.TranslatesAutoresizingMaskIntoConstraints = false;
-                adBanner.AdUnitId = "ca-app-pub-3940256099942544/2934735716";
+                adBanner.AdUnitId = e.NewElement.AdId;
                 adBanner.RootViewController = vc;
                 adBanner.LoadRequest(Request.GetDefaultRequest());
                 // TODO considerar avaliar a falha do carregamento para alterar a constraint da altura
