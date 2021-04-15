@@ -4,10 +4,14 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:AdMobCross.Controls"
+    xmlns:local="clr-namespace:AdMobCross"
     Title="Banner">
     <ContentPage.Content>
         <Grid Margin="0,0,0,40" RowDefinitions="*,Auto">
-            <controls:AdView Grid.Row="1" HorizontalOptions="Center" />
+            <controls:AdView
+                Grid.Row="1"
+                AdId="{x:Static local:Constants.AdBannerId}"
+                HorizontalOptions="Center" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>
