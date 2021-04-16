@@ -12,9 +12,20 @@ namespace AdMobCross.iOS.Renderers
 {
     public class AdViewRenderer : ViewRenderer<AdView, UIView>
     {
+        private AdView _adView;
+        private BannerView _adBanner;
+
         protected override void OnElementChanged(ElementChangedEventArgs<AdView> e)
         {
             base.OnElementChanged(e);
+
+            if (e.OldElement != null)
+            {
+                if (_adBanner != null)
+                {
+                    _adBanner.ReceiveAdFailed -= OnReceiveAdFailed;
+                }
+            }
 
             if (e.NewElement != null)
             {
@@ -25,19 +36,28 @@ namespace AdMobCross.iOS.Renderers
                     vc = vc.PresentedViewController;
                 }
 
-                var adSize = GetAdSize(e.NewElement.AdBannerSize);
-                var adBanner = new BannerView(adSize);
-                adBanner.TranslatesAutoresizingMaskIntoConstraints = false;
-                adBanner.AdUnitId = e.NewElement.AdId;
-                adBanner.RootViewController = vc;
-                adBanner.LoadRequest(Request.GetDefaultRequest());
-                // TODO considerar avaliar a falha do carregamento para alterar a constraint da altura
+                _adView = e.NewElement;
+                _adView.IsVisible = true;
 
-                e.NewElement.WidthRequest = adSize.Size.Width;
-                e.NewElement.HeightRequest = adSize.Size.Height;
+                var adSize = GetAdSize(_adView.AdBannerSize);
+                _adBanner = new BannerView(adSize);
+                _adBanner.ReceiveAdFailed += OnReceiveAdFailed;
+                _adBanner.TranslatesAutoresizingMaskIntoConstraints = false;
+                _adBanner.AdUnitId = _adView.AdId;
+                _adBanner.RootViewController = vc;
+                _adBanner.LoadRequest(Request.GetDefaultRequest());
 
-                SetNativeControl(adBanner);
+                _adView.WidthRequest = adSize.Size.Width;
+                _adView.HeightRequest = adSize.Size.Height;
+
+                SetNativeControl(_adBanner);
             }
+        }
+
+        private void OnReceiveAdFailed(object _, BannerViewErrorEventArgs __)
+        {
+            if (_adView != null)
+                _adView.IsVisible = false;
         }
 
         private AdSize GetAdSize(AdBannerSize adBannerSize)
