@@ -7,15 +7,15 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly:ExportRenderer(typeof(AdView), typeof(AdViewRenderer))]
+[assembly:ExportRenderer(typeof(AdBannerView), typeof(AdBannerViewRenderer))]
 namespace AdMobCross.iOS.Renderers
 {
-    public class AdViewRenderer : ViewRenderer<AdView, UIView>
+    public class AdBannerViewRenderer : ViewRenderer<AdBannerView, UIView>
     {
-        private AdView _adView;
+        private AdBannerView _adView;
         private BannerView _adBanner;
 
-        protected override void OnElementChanged(ElementChangedEventArgs<AdView> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<AdBannerView> e)
         {
             base.OnElementChanged(e);
 

@@ -4,12 +4,12 @@ using Xamarin.Forms;
 
 namespace AdMobCross.Controls
 {
-    public class AdView : ContentView
+    public class AdBannerView : ContentView
     {
         public static readonly BindableProperty AdIdProperty = BindableProperty.Create(
             nameof(AdId),
             typeof(string),
-            typeof(AdView),
+            typeof(AdBannerView),
             null,
             BindingMode.OneTime);
 
@@ -22,7 +22,7 @@ namespace AdMobCross.Controls
         public static readonly BindableProperty AdBannerSizeProperty = BindableProperty.Create(
             nameof(AdBannerSize),
             typeof(AdBannerSize),
-            typeof(AdView),
+            typeof(AdBannerView),
             Enums.AdBannerSize.Banner,
             BindingMode.OneTime);
 

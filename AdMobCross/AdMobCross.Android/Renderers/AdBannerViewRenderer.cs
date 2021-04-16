@@ -7,14 +7,14 @@ using Android.Gms.Ads;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android.AppCompat;
 
-[assembly: ExportRenderer(typeof(AdMobCross.Controls.AdView), typeof(AdViewRenderer))]
+[assembly: ExportRenderer(typeof(AdMobCross.Controls.AdBannerView), typeof(AdBannerViewRenderer))]
 namespace AdMobCross.Droid.Renderers
 {
-    public class AdViewRenderer : ViewRenderer<Controls.AdView, Android.Views.View>
+    public class AdBannerViewRenderer : ViewRenderer<Controls.AdBannerView, Android.Views.View>
     {
-        public AdViewRenderer(Context context) : base(context) { }
+        public AdBannerViewRenderer(Context context) : base(context) { }
 
-        protected override void OnElementChanged(Xamarin.Forms.Platform.Android.ElementChangedEventArgs<Controls.AdView> e)
+        protected override void OnElementChanged(Xamarin.Forms.Platform.Android.ElementChangedEventArgs<Controls.AdBannerView> e)
         {
             base.OnElementChanged(e);
 
