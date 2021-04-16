@@ -17,5 +17,6 @@
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="Controls\" />
+    <Folder Include="Enums\" />
   </ItemGroup>
 </Project>
