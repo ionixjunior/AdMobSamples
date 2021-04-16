@@ -1,5 +1,6 @@
 ﻿using System;
 using AdMobCross.Controls;
+using AdMobCross.Enums;
 using AdMobCross.iOS.Renderers;
 using Google.MobileAds;
 using UIKit;
@@ -24,7 +25,7 @@ namespace AdMobCross.iOS.Renderers
                     vc = vc.PresentedViewController;
                 }
 
-                var adSize = AdSizeCons.Banner;
+                var adSize = GetAdSize(e.NewElement.AdBannerSize);
                 var adBanner = new BannerView(adSize);
                 adBanner.TranslatesAutoresizingMaskIntoConstraints = false;
                 adBanner.AdUnitId = e.NewElement.AdId;
@@ -37,6 +38,19 @@ namespace AdMobCross.iOS.Renderers
 
                 SetNativeControl(adBanner);
             }
+        }
+
+        private AdSize GetAdSize(AdBannerSize adBannerSize)
+        {
+            return adBannerSize switch
+            {
+                AdBannerSize.Banner => AdSizeCons.Banner,
+                AdBannerSize.FullBanner => AdSizeCons.FullBanner,
+                AdBannerSize.LargeBanner => AdSizeCons.LargeBanner,
+                AdBannerSize.Leaderboard => AdSizeCons.Leaderboard,
+                AdBannerSize.MediumRectangle => AdSizeCons.MediumRectangle,
+                _ => AdSizeCons.Invalid
+            };
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using AdMobCross.Controls;
 using AdMobCross.Droid.Renderers;
+using AdMobCross.Enums;
 using Android.Content;
 using Android.Gms.Ads;
 using Xamarin.Forms;
@@ -19,7 +20,7 @@ namespace AdMobCross.Droid.Renderers
 
             if (e.NewElement != null)
             {
-                var adSize = AdSize.Banner;
+                var adSize = GetAdSize(e.NewElement.AdBannerSize);
                 var adBanner = new Android.Gms.Ads.AdView(Context);
                 adBanner.AdSize = adSize;
                 adBanner.AdUnitId = e.NewElement.AdId;
@@ -31,6 +32,19 @@ namespace AdMobCross.Droid.Renderers
 
                 SetNativeControl(adBanner);
             }
+        }
+
+        private AdSize GetAdSize(AdBannerSize adBannerSize)
+        {
+            return adBannerSize switch
+            {
+                AdBannerSize.Banner => AdSize.Banner,
+                AdBannerSize.FullBanner => AdSize.FullBanner,
+                AdBannerSize.LargeBanner => AdSize.LargeBanner,
+                AdBannerSize.Leaderboard => AdSize.Leaderboard,
+                AdBannerSize.MediumRectangle => AdSize.MediumRectangle,
+                _ => AdSize.Invalid
+            };
         }
     }
 }
