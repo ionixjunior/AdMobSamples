@@ -20,12 +20,13 @@ namespace AdMobCross.Droid.Renderers
 
             if (e.NewElement != null)
             {
+                e.NewElement.IsVisible = true;
                 var adSize = GetAdSize(e.NewElement.AdBannerSize);
                 var adBanner = new Android.Gms.Ads.AdView(Context);
+                adBanner.AdListener = new CustomAdListener(e.NewElement);
                 adBanner.AdSize = adSize;
                 adBanner.AdUnitId = e.NewElement.AdId;
                 adBanner.LoadAd(new AdRequest.Builder().Build());
-                // TODO considerar avaliar a falha do carregamento para alterar a constraint da altura
 
                 e.NewElement.WidthRequest = adSize.Width;
                 e.NewElement.HeightRequest = adSize.Height;
@@ -45,6 +46,22 @@ namespace AdMobCross.Droid.Renderers
                 AdBannerSize.MediumRectangle => AdSize.MediumRectangle,
                 _ => AdSize.Invalid
             };
+        }
+    }
+
+    public class CustomAdListener : AdListener
+    {
+        private readonly View _adView;
+
+        public CustomAdListener(View adView)
+        {
+            _adView = adView;
+        }
+
+        public override void OnAdFailedToLoad(LoadAdError p0)
+        {
+            base.OnAdFailedToLoad(p0);
+            _adView.IsVisible = false;
         }
     }
 }
