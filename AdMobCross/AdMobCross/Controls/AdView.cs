@@ -1,4 +1,5 @@
 ﻿using System;
+using AdMobCross.Enums;
 using Xamarin.Forms;
 
 namespace AdMobCross.Controls
@@ -16,6 +17,19 @@ namespace AdMobCross.Controls
         {
             get => (string)GetValue(AdIdProperty);
             set => SetValue(AdIdProperty, value);
+        }
+
+        public static readonly BindableProperty AdBannerSizeProperty = BindableProperty.Create(
+            nameof(AdBannerSize),
+            typeof(AdBannerSize),
+            typeof(AdView),
+            Enums.AdBannerSize.Banner,
+            BindingMode.OneTime);
+
+        public AdBannerSize AdBannerSize
+        {
+            get => (AdBannerSize)GetValue(AdBannerSizeProperty);
+            set => SetValue(AdBannerSizeProperty, value);
         }
     }
 }
