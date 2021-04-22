@@ -18,5 +18,11 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, BannerActivity::class.java)
             startActivity(intent)
         }
+
+        var btInterstitial = findViewById<Button>(R.id.btInterstitial)
+        btInterstitial.setOnClickListener {
+            var intent = Intent(this, InterstitialActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
