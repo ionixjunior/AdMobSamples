@@ -19,9 +19,9 @@ namespace AdMobCross.iOS.Renderers
                 _lifecycleLite = lifecycleLite;
         }
 
-        public override void ViewDidLoad()
+        public override void ViewWillAppear(bool animated)
         {
-            base.ViewDidLoad();
+            base.ViewWillAppear(animated);
             _lifecycleLite?.OnCreated();
         }
 
