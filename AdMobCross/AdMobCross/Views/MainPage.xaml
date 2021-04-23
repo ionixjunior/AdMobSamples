@@ -6,10 +6,13 @@
     Title="Anúncios">
     <StackLayout Margin="20">
         <Button
-            BackgroundColor="#1A73E8"
             Clicked="OnBannerClicked"
             FontAttributes="Bold"
-            Text="Banner"
-            TextColor="White" />
+            Text="Banner" />
+
+        <Button
+            Clicked="OnInterstitialClicked"
+            FontAttributes="Bold"
+            Text="Interstitial" />
     </StackLayout>
 </ContentPage>
