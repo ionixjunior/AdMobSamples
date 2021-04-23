@@ -7,20 +7,17 @@ namespace AdMobCross.Views
 {
     public partial class InterstitialView : ContentPage
     {
-        private readonly IAdInterstitial _adInterstitial;
+        private readonly IInterstitial _adInterstitial;
 
         public InterstitialView()
         {
             InitializeComponent();
-            _adInterstitial = DependencyService.Get<IAdInterstitial>();
+            _adInterstitial = DependencyService.Get<IInterstitial>();
             _adInterstitial.AdLoaded += OnAdLoaded;
             _adInterstitial.AdFailed += OnAdFailed;
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
+            _adInterstitial.AdDismissedFullScreenContent += OnAdDismissedFullScreenContent;
+            _adInterstitial.AdFailedToShowFullScreenContent += OnAdFailedToShowFullScreenContent;
+            _adInterstitial.AdShowedFullScreenContent += OnAdShowedFullScreenContent;
             _adInterstitial?.Load();
         }
 
@@ -32,6 +29,28 @@ namespace AdMobCross.Views
         private void OnAdFailed()
         {
             System.Diagnostics.Debug.WriteLine("A propaganda não pode ser carregada na tela");
+        }
+
+        private void AoClicarEmMostrar(object _, EventArgs __)
+        {
+            _adInterstitial?.Show();
+            //_adInterstitial.AdLoaded -= OnAdLoaded;
+            //_adInterstitial.AdFailed -= OnAdFailed;
+        }
+
+        private void OnAdDismissedFullScreenContent()
+        {
+            System.Diagnostics.Debug.WriteLine("A propaganda foi descartada da tela");
+        }
+
+        private void OnAdFailedToShowFullScreenContent()
+        {
+            System.Diagnostics.Debug.WriteLine("A propaganda falhou ao ser exibida na tela");
+        }
+
+        private void OnAdShowedFullScreenContent()
+        {
+            System.Diagnostics.Debug.WriteLine("A propaganda foi exibida na tela");
         }
     }
 }

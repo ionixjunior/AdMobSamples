@@ -6,7 +6,7 @@
     Title="Interstitial">
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <Button Text="Mostrar" />
+            <Button Clicked="AoClicarEmMostrar" Text="Mostrar" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

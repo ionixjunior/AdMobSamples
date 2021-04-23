@@ -21,7 +21,7 @@ namespace AdMobCross.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Android.Gms.Ads.MobileAds.Initialize(this);
 
-            DependencyService.Register<IAdInterstitial, AdInterstitial>();
+            DependencyService.Register<IInterstitial, InterstitialAndroid>();
 
             LoadApplication(new App());
         }
