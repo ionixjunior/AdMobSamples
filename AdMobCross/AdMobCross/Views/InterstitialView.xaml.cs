@@ -31,13 +31,6 @@ namespace AdMobCross.Views
             System.Diagnostics.Debug.WriteLine("A propaganda não pode ser carregada na tela");
         }
 
-        private void AoClicarEmMostrar(object _, EventArgs __)
-        {
-            _adInterstitial?.Show();
-            //_adInterstitial.AdLoaded -= OnAdLoaded;
-            //_adInterstitial.AdFailed -= OnAdFailed;
-        }
-
         private void OnAdDismissedFullScreenContent()
         {
             System.Diagnostics.Debug.WriteLine("A propaganda foi descartada da tela");
@@ -51,6 +44,13 @@ namespace AdMobCross.Views
         private void OnAdShowedFullScreenContent()
         {
             System.Diagnostics.Debug.WriteLine("A propaganda foi exibida na tela");
+        }
+
+        private void AoClicarEmMostrar(object _, EventArgs __)
+        {
+            _adInterstitial?.Show();
+            //_adInterstitial.AdLoaded -= OnAdLoaded;
+            //_adInterstitial.AdFailed -= OnAdFailed;
         }
     }
 }
