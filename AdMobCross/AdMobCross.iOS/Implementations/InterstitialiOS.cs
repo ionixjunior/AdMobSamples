@@ -48,11 +48,12 @@ namespace AdMobCross.iOS.Implementations
         private void OnWillPresentScreen(object _, EventArgs __)
         {
             AdShowedFullScreenContent?.Invoke();
+            _interstitialAd = null;
         }
 
         public void Show()
         {
-            throw new NotImplementedException();
+            _interstitialAd?.Present(Xamarin.Essentials.Platform.GetCurrentUIViewController());
         }
     }
 }
