@@ -112,8 +112,25 @@
                     <view key="view" contentMode="scaleToFill" id="6Lf-0J-qlI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAT-sy-ERp">
+                                <rect key="frame" x="20" y="108" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.45098039220000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Mostrar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="AoClicarEmMostrar:" destination="BtA-n0-J8O" eventType="touchUpInside" id="svQ-Eg-sSy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="lqI-0g-SV1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rAT-sy-ERp" firstAttribute="top" secondItem="lqI-0g-SV1" secondAttribute="top" constant="20" id="2Hm-hy-jFc"/>
+                            <constraint firstItem="lqI-0g-SV1" firstAttribute="trailing" secondItem="rAT-sy-ERp" secondAttribute="trailing" constant="20" id="9WI-Ka-XFZ"/>
+                            <constraint firstItem="rAT-sy-ERp" firstAttribute="leading" secondItem="lqI-0g-SV1" secondAttribute="leading" constant="20" id="W8v-dD-tOF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Interstitial" id="b4N-OY-qxy"/>
                 </viewController>
