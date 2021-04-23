@@ -4,7 +4,7 @@ import GoogleMobileAds
 class InterstitialViewController: UIViewController, GADFullScreenContentDelegate {
     private var interstitial: GADInterstitialAd?
     private let TAG = String("InterstitialAD")
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
