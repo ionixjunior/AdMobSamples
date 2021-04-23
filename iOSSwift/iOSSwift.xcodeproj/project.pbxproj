@@ -14,6 +14,7 @@
 		7A50EE9F2616B3FA00DC9E13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A50EE9D2616B3FA00DC9E13 /* Main.storyboard */; };
 		7A50EEA12616B3FC00DC9E13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A50EEA02616B3FC00DC9E13 /* Assets.xcassets */; };
 		7A50EEA42616B3FC00DC9E13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A50EEA22616B3FC00DC9E13 /* LaunchScreen.storyboard */; };
+		7AB0E35426324632005BA522 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0E35326324632005BA522 /* InterstitialViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		7A50EEA32616B3FC00DC9E13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A50EEA52616B3FC00DC9E13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AA2AF680958EDE2AFFA1A9B /* Pods_iOSSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AB0E35326324632005BA522 /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		83DC6633884044ED087C035E /* Pods-iOSSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSSwift.release.xcconfig"; path = "Target Support Files/Pods-iOSSwift/Pods-iOSSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 				7A50EEA02616B3FC00DC9E13 /* Assets.xcassets */,
 				7A50EEA22616B3FC00DC9E13 /* LaunchScreen.storyboard */,
 				7A50EEA52616B3FC00DC9E13 /* Info.plist */,
+				7AB0E35326324632005BA522 /* InterstitialViewController.swift */,
 			);
 			path = iOSSwift;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB0E35426324632005BA522 /* InterstitialViewController.swift in Sources */,
 				7A50EE9C2616B3FA00DC9E13 /* BannerViewController.swift in Sources */,
 				7A50EE982616B3F900DC9E13 /* AppDelegate.swift in Sources */,
 				7A50EE9A2616B3FA00DC9E13 /* SceneDelegate.swift in Sources */,

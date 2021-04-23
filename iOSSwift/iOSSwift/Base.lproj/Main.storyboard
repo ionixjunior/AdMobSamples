@@ -32,23 +32,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dC4-eJ-Gbb">
-                                <rect key="frame" x="20" y="108" width="374" height="30"/>
-                                <color key="backgroundColor" red="0.10196078431372549" green="0.45098039215686275" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Banner">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="PrW-ZN-LrL"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J3g-vW-kpF">
+                                <rect key="frame" x="20" y="108" width="374" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dC4-eJ-Gbb">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <color key="backgroundColor" red="0.10196078431372549" green="0.45098039215686275" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Banner">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="PrW-ZN-LrL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9T-PJ-hhZ">
+                                        <rect key="frame" x="0.0" y="50" width="374" height="30"/>
+                                        <color key="backgroundColor" red="0.1019607843" green="0.45098039220000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Interstitial">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BtA-n0-J8O" kind="show" id="soO-y6-HyI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZJI-Mr-1Z3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dC4-eJ-Gbb" firstAttribute="leading" secondItem="ZJI-Mr-1Z3" secondAttribute="leading" constant="20" id="IOY-m9-DUk"/>
-                            <constraint firstItem="dC4-eJ-Gbb" firstAttribute="top" secondItem="ZJI-Mr-1Z3" secondAttribute="top" constant="20" id="LJE-g2-Zb9"/>
-                            <constraint firstItem="ZJI-Mr-1Z3" firstAttribute="trailing" secondItem="dC4-eJ-Gbb" secondAttribute="trailing" constant="20" id="mPi-w7-dBR"/>
+                            <constraint firstItem="J3g-vW-kpF" firstAttribute="leading" secondItem="ZJI-Mr-1Z3" secondAttribute="leading" constant="20" id="Lvx-CH-8Ih"/>
+                            <constraint firstItem="ZJI-Mr-1Z3" firstAttribute="trailing" secondItem="J3g-vW-kpF" secondAttribute="trailing" constant="20" id="fg5-1V-P5q"/>
+                            <constraint firstItem="J3g-vW-kpF" firstAttribute="top" secondItem="ZJI-Mr-1Z3" secondAttribute="top" constant="20" id="tFX-jg-m3i"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Anúncios" id="2JW-Qm-Mad"/>
@@ -88,7 +103,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42" y="130"/>
+            <point key="canvasLocation" x="-1897" y="871"/>
+        </scene>
+        <!--Interstitial-->
+        <scene sceneID="Dfd-Qh-cX1">
+            <objects>
+                <viewController id="BtA-n0-J8O" customClass="InterstitialViewController" customModule="iOSSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Lf-0J-qlI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lqI-0g-SV1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Interstitial" id="b4N-OY-qxy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OUl-h9-TLR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1171" y="871"/>
         </scene>
     </scenes>
     <resources>
