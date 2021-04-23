@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using AdMobCross.Interfaces;
+using AdMobCross.iOS.Implementations;
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace AdMobCross.iOS
 {
@@ -25,6 +27,8 @@ namespace AdMobCross.iOS
             global::Xamarin.Forms.Forms.Init();
             _ = Firebase.Core.Configuration.SharedInstance;
             Google.MobileAds.MobileAds.SharedInstance.Start(null);
+
+            DependencyService.Register<IInterstitial, InterstitialiOS>();
 
             LoadApplication(new App());
 
