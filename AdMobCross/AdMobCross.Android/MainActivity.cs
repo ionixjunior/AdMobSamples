@@ -4,6 +4,9 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Xamarin.Forms;
+using AdMobCross.Interfaces;
+using AdMobCross.Droid.Implementations;
 
 namespace AdMobCross.Droid
 {
@@ -17,6 +20,8 @@ namespace AdMobCross.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Android.Gms.Ads.MobileAds.Initialize(this);
+
+            DependencyService.Register<IAdInterstitial, AdInterstitial>();
 
             LoadApplication(new App());
         }
