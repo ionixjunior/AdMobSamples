@@ -9,6 +9,8 @@ namespace AdMobCross.Droid.Renderers
 {
     public class LifecycleLitePageRenderer : PageRenderer
     {
+        private ILifecycleLite _lifecycleLite;
+
         public LifecycleLitePageRenderer(Context context) : base(context)
         {
         }
@@ -17,13 +19,23 @@ namespace AdMobCross.Droid.Renderers
         {
             base.OnElementChanged(e);
 
-            if (e.OldElement is ILifecycleLite)
+            if (e.OldElement is ILifecycleLite oldLifecycleLite)
             {
+                oldLifecycleLite.OnDestroyed();
             }
 
-            if (e.NewElement is ILifecycleLite lifecycleLite)
+            if (e.NewElement is ILifecycleLite newLifecycleLite)
             {
+                _lifecycleLite = newLifecycleLite;
+                newLifecycleLite.OnCreated();
             }
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+
+            _lifecycleLite?.OnDestroyed();
         }
     }
 }
