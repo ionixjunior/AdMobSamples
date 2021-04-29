@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace AdMobCross.Views
 {
-    public partial class InterstitialView : ContentPage
+    public partial class InterstitialView : ContentPage, ILifecycleLite
     {
         private readonly IInterstitial _adInterstitial;
 
@@ -13,11 +13,6 @@ namespace AdMobCross.Views
         {
             InitializeComponent();
             _adInterstitial = DependencyService.Get<IInterstitial>();
-            _adInterstitial.AdLoaded += OnAdLoaded;
-            _adInterstitial.AdFailed += OnAdFailed;
-            _adInterstitial.AdDismissedFullScreenContent += OnAdDismissedFullScreenContent;
-            _adInterstitial.AdFailedToShowFullScreenContent += OnAdFailedToShowFullScreenContent;
-            _adInterstitial.AdShowedFullScreenContent += OnAdShowedFullScreenContent;
             _adInterstitial?.Load();
         }
 
@@ -51,6 +46,26 @@ namespace AdMobCross.Views
             _adInterstitial?.Show();
             //_adInterstitial.AdLoaded -= OnAdLoaded;
             //_adInterstitial.AdFailed -= OnAdFailed;
+        }
+
+        public void OnCreated()
+        {
+            System.Diagnostics.Debug.WriteLine("A tela abriu!");
+            _adInterstitial.AdLoaded += OnAdLoaded;
+            _adInterstitial.AdFailed += OnAdFailed;
+            _adInterstitial.AdDismissedFullScreenContent += OnAdDismissedFullScreenContent;
+            _adInterstitial.AdFailedToShowFullScreenContent += OnAdFailedToShowFullScreenContent;
+            _adInterstitial.AdShowedFullScreenContent += OnAdShowedFullScreenContent;
+        }
+
+        public void OnDestroyed()
+        {
+            System.Diagnostics.Debug.WriteLine("A tela foi destruida!");
+            _adInterstitial.AdLoaded -= OnAdLoaded;
+            _adInterstitial.AdFailed -= OnAdFailed;
+            _adInterstitial.AdDismissedFullScreenContent -= OnAdDismissedFullScreenContent;
+            _adInterstitial.AdFailedToShowFullScreenContent -= OnAdFailedToShowFullScreenContent;
+            _adInterstitial.AdShowedFullScreenContent -= OnAdShowedFullScreenContent;
         }
     }
 }
