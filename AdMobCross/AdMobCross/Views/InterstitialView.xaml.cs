@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using AdMobCross.Interfaces;
 using Xamarin.Forms;
 
