@@ -44,8 +44,6 @@ namespace AdMobCross.Views
         private void AoClicarEmMostrar(object _, EventArgs __)
         {
             _adInterstitial?.Show();
-            //_adInterstitial.AdLoaded -= OnAdLoaded;
-            //_adInterstitial.AdFailed -= OnAdFailed;
         }
 
         public void OnCreated()
