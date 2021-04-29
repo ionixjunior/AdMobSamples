@@ -1,5 +1,4 @@
-﻿using System;
-using AdMobCross.Interfaces;
+﻿using AdMobCross.Interfaces;
 using AdMobCross.iOS.Renderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -19,15 +18,15 @@ namespace AdMobCross.iOS.Renderers
                 _lifecycleLite = lifecycleLite;
         }
 
-        public override void ViewWillAppear(bool animated)
+        public override void ViewDidLoad()
         {
-            base.ViewWillAppear(animated);
+            base.ViewDidLoad();
             _lifecycleLite?.OnCreated();
         }
 
-        public override void ViewDidDisappear(bool animated)
+        protected override void Dispose(bool disposing)
         {
-            base.ViewDidDisappear(animated);
+            base.Dispose(disposing);
             _lifecycleLite?.OnDestroyed();
         }
     }
