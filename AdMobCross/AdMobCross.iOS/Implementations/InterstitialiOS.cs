@@ -13,7 +13,7 @@ namespace AdMobCross.iOS.Implementations
         public event Action AdFailedToShowFullScreenContent;
         public event Action AdShowedFullScreenContent;
 
-        public void Load()
+        public void Load(string adId)
         {
             var request = Request.GetDefaultRequest();
             _interstitialAd = new Interstitial("ca-app-pub-3940256099942544/4411468910");

@@ -15,7 +15,7 @@ namespace AdMobCross.Droid.Implementations
         public event Action AdFailedToShowFullScreenContent;
         public event Action AdShowedFullScreenContent;
 
-        public void Load()
+        public void Load(string adId)
         {
             var adRequest = new AdRequest.Builder().Build();
 

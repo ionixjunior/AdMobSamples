@@ -4,7 +4,7 @@ namespace AdMobCross.Interfaces
 {
     public interface IInterstitial
     {
-        void Load();
+        void Load(string adId);
         void Show();
         event Action AdLoaded;
         event Action AdFailed;
