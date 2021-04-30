@@ -29,7 +29,7 @@ namespace AdMobCross.Droid.Implementations
 
             CustomInterstitialAdLoadCallback.LoadInterstitial(
                 Xamarin.Essentials.Platform.AppContext,
-                "ca-app-pub-3940256099942544/1033173712",
+                adId,
                 adRequest,
                 new CustomInterstitialAdLoadCallback(this)
             );

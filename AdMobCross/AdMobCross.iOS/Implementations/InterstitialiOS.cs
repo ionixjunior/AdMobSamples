@@ -16,7 +16,7 @@ namespace AdMobCross.iOS.Implementations
         public void Load(string adId)
         {
             var request = Request.GetDefaultRequest();
-            _interstitialAd = new Interstitial("ca-app-pub-3940256099942544/4411468910");
+            _interstitialAd = new Interstitial(adId);
             _interstitialAd.AdReceived += OnAdReceived;
             _interstitialAd.ReceiveAdFailed += OnReceiveAdFailed;
             _interstitialAd.ScreenDismissed += OnWillDismissScreen;
