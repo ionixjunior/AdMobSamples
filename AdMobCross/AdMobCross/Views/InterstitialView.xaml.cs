@@ -12,7 +12,7 @@ namespace AdMobCross.Views
         {
             InitializeComponent();
             _adInterstitial = DependencyService.Get<IInterstitial>();
-            _adInterstitial?.Load(string.Empty);
+            _adInterstitial?.Load(Constants.AdInterstitialId);
         }
 
         private void OnAdLoaded()
