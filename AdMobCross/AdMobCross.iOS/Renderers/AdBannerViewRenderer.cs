@@ -29,13 +29,6 @@ namespace AdMobCross.iOS.Renderers
 
             if (e.NewElement != null)
             {
-                var window = UIApplication.SharedApplication.KeyWindow;
-                var vc = window.RootViewController;
-                while (vc.PresentedViewController != null)
-                {
-                    vc = vc.PresentedViewController;
-                }
-
                 _adView = e.NewElement;
                 _adView.IsVisible = true;
 
@@ -44,7 +37,7 @@ namespace AdMobCross.iOS.Renderers
                 _adBanner.ReceiveAdFailed += OnReceiveAdFailed;
                 _adBanner.TranslatesAutoresizingMaskIntoConstraints = false;
                 _adBanner.AdUnitId = _adView.AdId;
-                _adBanner.RootViewController = vc;
+                _adBanner.RootViewController = Xamarin.Essentials.Platform.GetCurrentUIViewController();
                 _adBanner.LoadRequest(Request.GetDefaultRequest());
 
                 _adView.WidthRequest = adSize.Size.Width;
