@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J3g-vW-kpF">
-                                <rect key="frame" x="20" y="108" width="374" height="80"/>
+                                <rect key="frame" x="20" y="108" width="374" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dC4-eJ-Gbb">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -53,6 +53,16 @@
                                         </state>
                                         <connections>
                                             <segue destination="BtA-n0-J8O" kind="show" id="soO-y6-HyI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="io5-Ww-cFM">
+                                        <rect key="frame" x="0.0" y="100" width="374" height="30"/>
+                                        <color key="backgroundColor" red="0.1019607843" green="0.45098039220000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Rewarded">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="TsG-EA-rDQ" kind="show" id="5Ev-Ru-nL5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -137,6 +147,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OUl-h9-TLR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1171" y="871"/>
+        </scene>
+        <!--Rewarded-->
+        <scene sceneID="h7b-ib-SaB">
+            <objects>
+                <viewController id="TsG-EA-rDQ" customClass="RewardedViewController" customModule="iOSSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E8B-a1-NXU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vn5-l2-BdK">
+                                <rect key="frame" x="20" y="108" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.45098039220000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Mostrar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="AoClicarEmMostrar:" destination="BtA-n0-J8O" eventType="touchUpInside" id="RBI-gy-Djo"/>
+                                    <action selector="AoClicarEmMostrar:" destination="TsG-EA-rDQ" eventType="touchUpInside" id="hZU-gi-Cwf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eyu-6w-dG6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vn5-l2-BdK" firstAttribute="leading" secondItem="eyu-6w-dG6" secondAttribute="leading" constant="20" id="0A4-PQ-8iH"/>
+                            <constraint firstItem="eyu-6w-dG6" firstAttribute="trailing" secondItem="Vn5-l2-BdK" secondAttribute="trailing" constant="20" id="4ac-Hl-vve"/>
+                            <constraint firstItem="Vn5-l2-BdK" firstAttribute="top" secondItem="eyu-6w-dG6" secondAttribute="top" constant="20" id="Fab-e2-Xwo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Rewarded" id="UOH-co-gEf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Teh-Te-1xP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-429" y="871"/>
         </scene>
     </scenes>
     <resources>
