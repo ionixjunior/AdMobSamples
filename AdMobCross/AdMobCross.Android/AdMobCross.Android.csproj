@@ -66,6 +66,7 @@
     <Compile Include="Renderers\AdBannerViewRenderer.cs" />
     <Compile Include="Implementations\InterstitialAndroid.cs" />
     <Compile Include="Renderers\LifecycleLitePageRenderer.cs" />
+    <Compile Include="Implementations\RewardedAndroid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

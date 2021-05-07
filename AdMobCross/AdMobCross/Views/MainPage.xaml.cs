@@ -24,5 +24,10 @@ namespace AdMobCross.Views
         {
             await Navigation.PushAsync(new InterstitialView());
         }
+
+        private async void OnRewardedClicked(object _, EventArgs __)
+        {
+            await Navigation.PushAsync(new RewardedView());
+        }
     }
 }

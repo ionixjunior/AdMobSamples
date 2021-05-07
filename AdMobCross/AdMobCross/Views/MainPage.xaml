@@ -14,5 +14,10 @@
             Clicked="OnInterstitialClicked"
             FontAttributes="Bold"
             Text="Interstitial" />
+
+        <Button
+            Clicked="OnRewardedClicked"
+            FontAttributes="Bold"
+            Text="Rewarded" />
     </StackLayout>
 </ContentPage>

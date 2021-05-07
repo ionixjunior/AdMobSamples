@@ -22,6 +22,7 @@ namespace AdMobCross.Droid
             Android.Gms.Ads.MobileAds.Initialize(this);
 
             DependencyService.Register<IInterstitial, InterstitialAndroid>();
+            DependencyService.Register<IRewarded, RewardedAndroid>();
 
             LoadApplication(new App());
         }
