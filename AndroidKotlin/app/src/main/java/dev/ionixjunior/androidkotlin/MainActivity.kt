@@ -24,5 +24,11 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, InterstitialActivity::class.java)
             startActivity(intent)
         }
+
+        var btRewarded = findViewById<Button>(R.id.btRewarded)
+        btRewarded.setOnClickListener {
+            var intent = Intent(this, RewardedActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
