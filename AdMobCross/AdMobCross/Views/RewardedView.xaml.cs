@@ -23,6 +23,7 @@ namespace AdMobCross.Views
             _adRewarded.AdDismissedFullScreenContent += OnAdDismissedFullScreenContent;
             _adRewarded.AdFailedToShowFullScreenContent += OnAdFailedToShowFullScreenContent;
             _adRewarded.AdShowedFullScreenContent += OnAdShowedFullScreenContent;
+            _adRewarded.AdEarnReward += OnAdEarnReward;
         }
 
         public void OnDestroyed()
@@ -33,6 +34,7 @@ namespace AdMobCross.Views
             _adRewarded.AdDismissedFullScreenContent -= OnAdDismissedFullScreenContent;
             _adRewarded.AdFailedToShowFullScreenContent -= OnAdFailedToShowFullScreenContent;
             _adRewarded.AdShowedFullScreenContent -= OnAdShowedFullScreenContent;
+            _adRewarded.AdEarnReward -= OnAdEarnReward;
         }
 
         private void OnAdLoaded()
@@ -58,6 +60,11 @@ namespace AdMobCross.Views
         private void OnAdShowedFullScreenContent()
         {
             System.Diagnostics.Debug.WriteLine("A propaganda foi exibida na tela");
+        }
+
+        private void OnAdEarnReward()
+        {
+            System.Diagnostics.Debug.WriteLine("Ganhou um prêmio!");
         }
 
         private void AoClicarEmMostrar(object _, EventArgs __)
