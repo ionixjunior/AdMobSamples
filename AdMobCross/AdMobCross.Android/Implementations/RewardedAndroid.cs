@@ -30,7 +30,7 @@ namespace AdMobCross.Droid.Implementations
 
             _rewardedAd = MobileAds.GetRewardedVideoAdInstance(Xamarin.Essentials.Platform.AppContext);
             _rewardedAd.RewardedVideoAdListener = new CustomRewardedAdListener(this);
-            _rewardedAd.LoadAd("ca-app-pub-3940256099942544/5224354917", adRequest);
+            _rewardedAd.LoadAd(adId, adRequest);
         }
 
         public void Show()
