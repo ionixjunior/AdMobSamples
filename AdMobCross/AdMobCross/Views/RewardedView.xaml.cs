@@ -1,5 +1,6 @@
 ﻿using System;
 using AdMobCross.Interfaces;
+using AdMobCross.Models;
 using Xamarin.Forms;
 
 namespace AdMobCross.Views
@@ -62,9 +63,9 @@ namespace AdMobCross.Views
             System.Diagnostics.Debug.WriteLine("A propaganda foi exibida na tela");
         }
 
-        private void OnAdEarnReward()
+        private void OnAdEarnReward(RewardItem rewardItem)
         {
-            System.Diagnostics.Debug.WriteLine("Ganhou um prêmio!");
+            System.Diagnostics.Debug.WriteLine($"Ganhou um prêmio: {rewardItem.Amount} {rewardItem.Type}");
         }
 
         private void AoClicarEmMostrar(object _, EventArgs __)

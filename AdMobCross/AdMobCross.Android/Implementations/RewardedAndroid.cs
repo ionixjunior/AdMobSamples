@@ -1,5 +1,6 @@
 ﻿using System;
 using AdMobCross.Interfaces;
+using AdMobCross.Models;
 using Android.Gms.Ads;
 using Android.Gms.Ads.Reward;
 
@@ -13,7 +14,7 @@ namespace AdMobCross.Droid.Implementations
         public event Action AdDismissedFullScreenContent;
         public event Action AdFailedToShowFullScreenContent;
         public event Action AdShowedFullScreenContent;
-        public event Action AdEarnReward;
+        public event Action<RewardItem> AdEarnReward;
 
         public void Load(string adId)
         {
@@ -48,7 +49,7 @@ namespace AdMobCross.Droid.Implementations
 
             public void OnRewarded(Android.Gms.Ads.Reward.IRewardItem reward)
             {
-                _rewardedAndroid.AdEarnReward?.Invoke();
+                _rewardedAndroid.AdEarnReward?.Invoke(new RewardItem(reward.Amount, reward.Type));
             }
 
             public void OnRewardedVideoAdClosed()

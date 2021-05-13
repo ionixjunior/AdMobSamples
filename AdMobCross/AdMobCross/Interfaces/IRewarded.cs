@@ -1,4 +1,6 @@
 ﻿using System;
+using AdMobCross.Models;
+
 namespace AdMobCross.Interfaces
 {
     public interface IRewarded
@@ -10,6 +12,6 @@ namespace AdMobCross.Interfaces
         event Action AdDismissedFullScreenContent;
         event Action AdFailedToShowFullScreenContent;
         event Action AdShowedFullScreenContent;
-        event Action AdEarnReward;
+        event Action<RewardItem> AdEarnReward;
     }
 }
