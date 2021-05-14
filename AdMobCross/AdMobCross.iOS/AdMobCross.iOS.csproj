@@ -76,6 +76,7 @@
     <Compile Include="Renderers\AdBannerViewRenderer.cs" />
     <Compile Include="Implementations\InterstitialiOS.cs" />
     <Compile Include="Renderers\LifecycleLitePageRenderer.cs" />
+    <Compile Include="Implementations\RewardediOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

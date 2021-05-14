@@ -32,5 +32,19 @@ namespace AdMobCross
                 return string.Empty;
             }
         }
+
+        public static string AdRewardedId
+        {
+            get
+            {
+                if (DeviceInfo.Platform == DevicePlatform.Android)
+                    return "ca-app-pub-3940256099942544/5224354917";
+
+                if (DeviceInfo.Platform == DevicePlatform.iOS)
+                    return "ca-app-pub-3940256099942544/1712485313";
+
+                return string.Empty;
+            }
+        }
     }
 }

@@ -23,5 +23,6 @@
     <Folder Include="Controls\" />
     <Folder Include="Enums\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 </Project>
