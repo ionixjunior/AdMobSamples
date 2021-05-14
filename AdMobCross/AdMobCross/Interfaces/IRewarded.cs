@@ -3,7 +3,7 @@ using AdMobCross.Models;
 
 namespace AdMobCross.Interfaces
 {
-    public interface IRewarded
+    public interface IRewarded : IDisposable
     {
         void Load(string adId);
         void Show();

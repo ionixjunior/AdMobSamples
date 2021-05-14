@@ -33,6 +33,11 @@ namespace AdMobCross.Droid.Implementations
             _rewardedAd.LoadAd(adId, adRequest);
         }
 
+        public void Dispose()
+        {
+            
+        }
+
         public void Show()
         {
             _rewardedAd?.Show();

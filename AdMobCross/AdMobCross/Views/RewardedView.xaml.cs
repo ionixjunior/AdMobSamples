@@ -36,6 +36,7 @@ namespace AdMobCross.Views
             _adRewarded.AdFailedToShowFullScreenContent -= OnAdFailedToShowFullScreenContent;
             _adRewarded.AdShowedFullScreenContent -= OnAdShowedFullScreenContent;
             _adRewarded.AdEarnReward -= OnAdEarnReward;
+            _adRewarded.Dispose();
         }
 
         private void OnAdLoaded()

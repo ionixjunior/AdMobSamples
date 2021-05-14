@@ -64,5 +64,16 @@ namespace AdMobCross.iOS.Implementations
                 RewardBasedVideoAd.SharedInstance.Present(Xamarin.Essentials.Platform.GetCurrentUIViewController());
             }
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+
+            RewardBasedVideoAd.SharedInstance.AdReceived -= OnAdReceived;
+            RewardBasedVideoAd.SharedInstance.FailedToLoad -= OnFailedToLoad;
+            RewardBasedVideoAd.SharedInstance.Closed -= OnClosed;
+            RewardBasedVideoAd.SharedInstance.Opened -= OnOpened;
+            RewardBasedVideoAd.SharedInstance.UserRewarded -= OnUserRewarded;
+        }
     }
 }
