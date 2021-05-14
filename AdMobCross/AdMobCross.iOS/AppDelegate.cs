@@ -29,6 +29,7 @@ namespace AdMobCross.iOS
             Google.MobileAds.MobileAds.SharedInstance.Start(null);
 
             DependencyService.Register<IInterstitial, InterstitialiOS>();
+            DependencyService.Register<IRewarded, RewardediOS>();
 
             LoadApplication(new App());
 
