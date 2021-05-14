@@ -69,6 +69,13 @@ namespace AdMobCross.iOS.Implementations
         {
             base.Dispose(disposing);
 
+            AdLoaded = null;
+            AdFailed = null;
+            AdDismissedFullScreenContent = null;
+            AdFailedToShowFullScreenContent = null;
+            AdShowedFullScreenContent = null;
+            AdEarnReward = null;
+
             RewardBasedVideoAd.SharedInstance.AdReceived -= OnAdReceived;
             RewardBasedVideoAd.SharedInstance.FailedToLoad -= OnFailedToLoad;
             RewardBasedVideoAd.SharedInstance.Closed -= OnClosed;

@@ -30,12 +30,6 @@ namespace AdMobCross.Views
         public void OnDestroyed()
         {
             System.Diagnostics.Debug.WriteLine("A tela foi destruida!");
-            _adRewarded.AdLoaded -= OnAdLoaded;
-            _adRewarded.AdFailed -= OnAdFailed;
-            _adRewarded.AdDismissedFullScreenContent -= OnAdDismissedFullScreenContent;
-            _adRewarded.AdFailedToShowFullScreenContent -= OnAdFailedToShowFullScreenContent;
-            _adRewarded.AdShowedFullScreenContent -= OnAdShowedFullScreenContent;
-            _adRewarded.AdEarnReward -= OnAdEarnReward;
             _adRewarded.Dispose();
         }
 

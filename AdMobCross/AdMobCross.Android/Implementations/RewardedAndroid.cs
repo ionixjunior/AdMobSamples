@@ -35,7 +35,12 @@ namespace AdMobCross.Droid.Implementations
 
         public void Dispose()
         {
-            
+            AdLoaded = null;
+            AdFailed = null;
+            AdDismissedFullScreenContent = null;
+            AdFailedToShowFullScreenContent = null;
+            AdShowedFullScreenContent = null;
+            AdEarnReward = null;
         }
 
         public void Show()
