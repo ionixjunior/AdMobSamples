@@ -58,11 +58,7 @@ namespace AdMobCross.Views
         public void OnDestroyed()
         {
             System.Diagnostics.Debug.WriteLine("A tela foi destruida!");
-            _adInterstitial.AdLoaded -= OnAdLoaded;
-            _adInterstitial.AdFailed -= OnAdFailed;
-            _adInterstitial.AdDismissedFullScreenContent -= OnAdDismissedFullScreenContent;
-            _adInterstitial.AdFailedToShowFullScreenContent -= OnAdFailedToShowFullScreenContent;
-            _adInterstitial.AdShowedFullScreenContent -= OnAdShowedFullScreenContent;
+            _adInterstitial.Dispose();
         }
     }
 }

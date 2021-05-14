@@ -48,12 +48,31 @@ namespace AdMobCross.iOS.Implementations
         private void OnWillPresentScreen(object _, EventArgs __)
         {
             AdShowedFullScreenContent?.Invoke();
-            _interstitialAd = null;
         }
 
         public void Show()
         {
-            _interstitialAd?.Present(Xamarin.Essentials.Platform.GetCurrentUIViewController());
+            if (_interstitialAd is null)
+                return;
+
+            if (_interstitialAd.IsReady)
+                _interstitialAd.Present(Xamarin.Essentials.Platform.GetCurrentUIViewController());
+        }
+
+        public void Dispose()
+        {
+            AdLoaded = null;
+            AdFailed = null;
+            AdDismissedFullScreenContent = null;
+            AdFailedToShowFullScreenContent = null;
+            AdShowedFullScreenContent = null;
+
+            _interstitialAd.AdReceived -= OnAdReceived;
+            _interstitialAd.ReceiveAdFailed -= OnReceiveAdFailed;
+            _interstitialAd.ScreenDismissed -= OnWillDismissScreen;
+            _interstitialAd.FailedToPresentScreen -= OnFailedToPresentScreen;
+            _interstitialAd.WillPresentScreen -= OnWillPresentScreen;
+            _interstitialAd = null;
         }
     }
 }

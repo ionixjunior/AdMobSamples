@@ -2,7 +2,7 @@
 
 namespace AdMobCross.Interfaces
 {
-    public interface IInterstitial
+    public interface IInterstitial : IDisposable
     {
         void Load(string adId);
         void Show();

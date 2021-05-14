@@ -40,6 +40,15 @@ namespace AdMobCross.Droid.Implementations
             _interstitialAd?.Show(Xamarin.Essentials.Platform.CurrentActivity);
         }
 
+        public void Dispose()
+        {
+            AdLoaded = null;
+            AdFailed = null;
+            AdDismissedFullScreenContent = null;
+            AdFailedToShowFullScreenContent = null;
+            AdShowedFullScreenContent = null;
+        }
+
         private class CustomInterstitialAdLoadCallback : AdLoadCallback
         {
             private InterstitialAndroid _interstitialAndroid;
