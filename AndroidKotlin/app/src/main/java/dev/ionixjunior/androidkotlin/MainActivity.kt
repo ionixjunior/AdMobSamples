@@ -30,5 +30,11 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, RewardedActivity::class.java)
             startActivity(intent)
         }
+
+        var btNative = findViewById<Button>(R.id.btNative)
+        btNative.setOnClickListener {
+            var intent = Intent(this, NativeActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

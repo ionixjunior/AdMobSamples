@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidKotlin">
-        <activity android:name=".RewardedActivity"></activity>
+        <activity android:name=".NativeActivity"></activity>
+        <activity android:name=".RewardedActivity" />
         <activity android:name=".InterstitialActivity" />
         <activity android:name=".BannerActivity" />
         <activity android:name=".MainActivity">

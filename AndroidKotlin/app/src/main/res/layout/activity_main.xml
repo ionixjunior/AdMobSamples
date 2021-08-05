@@ -37,4 +37,14 @@
         android:layout_marginRight="16dp"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/btNative"
+        android:layout_width="match_parent"
+        android:text="Native"
+        android:background="#1A73E8"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
