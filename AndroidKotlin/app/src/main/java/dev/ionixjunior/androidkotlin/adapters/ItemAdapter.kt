@@ -25,6 +25,6 @@ class ItemAdapter(private val itens: List<Item>) : RecyclerView.Adapter<ItemView
     }
 
     fun setAd(ad: NativeAd) {
-        
+
     }
 }
