@@ -11,7 +11,7 @@ import dev.ionixjunior.androidkotlin.viewholders.BaseViewHolder
 import dev.ionixjunior.androidkotlin.viewholders.ItemViewHolder
 
 class ItemAdapter(private val itens: List<Item>) : RecyclerView.Adapter<BaseViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_item, parent, false)
         return ItemViewHolder(view)
     }
