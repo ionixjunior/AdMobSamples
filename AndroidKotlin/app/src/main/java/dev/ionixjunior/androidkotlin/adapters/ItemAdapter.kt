@@ -3,6 +3,7 @@ package dev.ionixjunior.androidkotlin.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.ads.nativead.NativeAd
 import dev.ionixjunior.androidkotlin.R
 import dev.ionixjunior.androidkotlin.models.Item
 import dev.ionixjunior.androidkotlin.viewholders.ItemViewHolder
@@ -21,5 +22,9 @@ class ItemAdapter(private val itens: List<Item>) : RecyclerView.Adapter<ItemView
         val item = itens[position]
         holder.titleView.text = item.title
         holder.descriptionView.text = item.description
+    }
+
+    fun setAd(ad: NativeAd) {
+        
     }
 }

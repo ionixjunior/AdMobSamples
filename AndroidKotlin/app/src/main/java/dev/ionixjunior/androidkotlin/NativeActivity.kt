@@ -20,6 +20,7 @@ import dev.ionixjunior.androidkotlin.models.Item
 
 
 class NativeActivity : AppCompatActivity() {
+    private lateinit var adapter: ItemAdapter
     private var TAG = "NativeAD"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +30,7 @@ class NativeActivity : AppCompatActivity() {
         val adLoader = AdLoader.Builder(this, "ca-app-pub-3940256099942544/2247696110")
             .forNativeAd { ad : NativeAd ->
                 Log.d(TAG, "A propaganda carregou")
+                adapter?.setAd(ad)
 
                 val adView = layoutInflater.inflate(R.layout.layout_ad, null) as NativeAdView
                 val imageView = adView.findViewById<AppCompatImageView>(R.id.image)
@@ -67,7 +69,7 @@ class NativeActivity : AppCompatActivity() {
             itens.add(Item("Título do item $item", "Descrição do item $item"))
         }
 
-        val adapter = ItemAdapter(itens)
+        adapter = ItemAdapter(itens)
         list.adapter = adapter
     }
 
