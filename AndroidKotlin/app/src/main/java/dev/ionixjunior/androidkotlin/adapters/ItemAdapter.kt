@@ -25,8 +25,7 @@ class ItemAdapter(private val itens: List<Item>) : RecyclerView.Adapter<BaseView
 
         when (holder) {
             is ItemViewHolder -> {
-                holder.titleView.text = item.title
-                holder.descriptionView.text = item.description
+                holder.bind(item)
             }
         }
     }
