@@ -3,7 +3,6 @@ package dev.ionixjunior.androidkotlin.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.gms.ads.nativead.NativeAd
 import dev.ionixjunior.androidkotlin.R
 import dev.ionixjunior.androidkotlin.models.Ad
 import dev.ionixjunior.androidkotlin.viewholders.AdViewHolder
@@ -45,9 +44,7 @@ class ItemAdapter(private val itens: MutableList<Any>) : RecyclerView.Adapter<Ba
     private val adDefaultDistance = 5;
     private var adNextPosition = adDefaultDistance;
 
-    fun setAd(ad: NativeAd) {
-        val adItem = Ad(ad.icon.drawable, ad.headline, ad.body)
-
+    fun setAd(adItem: Ad) {
         if (adNextPosition > itens.size) {
             adNextPosition = itens.size
         }

@@ -12,6 +12,7 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdOptions
 import dev.ionixjunior.androidkotlin.adapters.ItemAdapter
+import dev.ionixjunior.androidkotlin.models.Ad
 import dev.ionixjunior.androidkotlin.models.Item
 
 
@@ -26,7 +27,9 @@ class NativeActivity : AppCompatActivity() {
         val adLoader = AdLoader.Builder(this, "ca-app-pub-3940256099942544/2247696110")
             .forNativeAd { ad : NativeAd ->
                 Log.d(TAG, "A propaganda carregou")
-                adapter?.setAd(ad)
+
+                val adItem = Ad(ad.icon.drawable, ad.headline, ad.body)
+                adapter?.setAd(adItem)
             }
             .withAdListener(object : AdListener() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {
