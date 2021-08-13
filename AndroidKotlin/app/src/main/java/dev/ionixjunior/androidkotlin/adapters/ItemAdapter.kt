@@ -5,13 +5,26 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.nativead.NativeAd
 import dev.ionixjunior.androidkotlin.R
+import dev.ionixjunior.androidkotlin.models.Ad
 import dev.ionixjunior.androidkotlin.viewholders.BaseViewHolder
 import dev.ionixjunior.androidkotlin.viewholders.ItemViewHolder
 
 class ItemAdapter(private val itens: List<Any>) : RecyclerView.Adapter<BaseViewHolder>() {
+    enum class ItemType {
+        Item,
+        Ad
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_item, parent, false)
         return ItemViewHolder(view)
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return when (itens[position]) {
+            is Ad -> ItemType.Ad.ordinal
+            else -> ItemType.Item.ordinal
+        }
     }
 
     override fun getItemCount(): Int {
