@@ -27,6 +27,11 @@ class NativeActivity : AppCompatActivity() {
 
         val adLoader = AdLoader.Builder(this, "ca-app-pub-3940256099942544/2247696110")
             .forNativeAd { ad : NativeAd ->
+                if (isDestroyed) {
+                    ad.destroy()
+                    return@forNativeAd
+                }
+
                 Log.d(TAG, "A propaganda carregou")
 
                 val adItem = Ad(ad.icon.drawable, ad.headline, ad.body)
