@@ -8,12 +8,16 @@ import dev.ionixjunior.androidkotlin.R
 import dev.ionixjunior.androidkotlin.models.Item
 
 class ItemViewHolder(view: View) : BaseViewHolder(view) {
-    fun bind(item: Item) {
-        titleView.text = item.title
-        descriptionView.text = item.description
-    }
-
     private val imageView: AppCompatImageView = view.findViewById<AppCompatImageView>(R.id.image)
     private val titleView: TextView = view.findViewById<TextView>(R.id.title)
     private val descriptionView: TextView = view.findViewById<TextView>(R.id.description)
+
+    override fun bind(data: Any) {
+        when (data) {
+            is Item -> {
+                titleView.text = data.title
+                descriptionView.text = data.description
+            }
+        }
+    }
 }
