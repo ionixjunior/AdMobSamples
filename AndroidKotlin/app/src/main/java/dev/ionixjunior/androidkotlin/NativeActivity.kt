@@ -59,7 +59,7 @@ class NativeActivity : AppCompatActivity() {
                     .build())
             .build()
 
-        adLoader.loadAd(AdRequest.Builder().build())
+        adLoader.loadAds(AdRequest.Builder().build(), 5)
 
         val list = findViewById<RecyclerView>(R.id.list)
         list.layoutManager = LinearLayoutManager(this)
