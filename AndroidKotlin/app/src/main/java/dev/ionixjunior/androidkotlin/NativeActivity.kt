@@ -19,6 +19,7 @@ import dev.ionixjunior.androidkotlin.models.Item
 class NativeActivity : AppCompatActivity() {
     private lateinit var adapter: ItemAdapter
     private var TAG = "NativeAD"
+    private var ads: MutableList<NativeAd> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +31,7 @@ class NativeActivity : AppCompatActivity() {
 
                 val adItem = Ad(ad.icon.drawable, ad.headline, ad.body)
                 adapter?.setAd(adItem)
+                ads.add(ad)
             }
             .withAdListener(object : AdListener() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {
@@ -59,6 +61,9 @@ class NativeActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        // TODO FAZER A LIMPEZA DE TODOS OS ADS
+
+        ads.forEach {
+            it.destroy()
+        }
     }
 }
