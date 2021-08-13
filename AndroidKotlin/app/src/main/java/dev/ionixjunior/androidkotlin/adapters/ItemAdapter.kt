@@ -45,6 +45,6 @@ class ItemAdapter(private val itens: MutableList<Any>) : RecyclerView.Adapter<Ba
     fun setAd(ad: NativeAd) {
         val adItem = Ad(ad.icon.drawable, ad.headline, ad.body)
         itens.add(5, adItem)
-        notifyDataSetChanged()
+        notifyItemInserted(5)
     }
 }
