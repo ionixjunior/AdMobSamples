@@ -10,7 +10,7 @@ import dev.ionixjunior.androidkotlin.viewholders.AdViewHolder
 import dev.ionixjunior.androidkotlin.viewholders.BaseViewHolder
 import dev.ionixjunior.androidkotlin.viewholders.ItemViewHolder
 
-class ItemAdapter(private val itens: List<Any>) : RecyclerView.Adapter<BaseViewHolder>() {
+class ItemAdapter(private val itens: MutableList<Any>) : RecyclerView.Adapter<BaseViewHolder>() {
     enum class ItemType {
         Item,
         Ad
@@ -43,6 +43,8 @@ class ItemAdapter(private val itens: List<Any>) : RecyclerView.Adapter<BaseViewH
     }
 
     fun setAd(ad: NativeAd) {
-
+        val adItem = Ad(ad.icon.drawable, ad.headline, ad.body)
+        itens.add(5, adItem)
+        notifyDataSetChanged()
     }
 }

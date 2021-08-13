@@ -64,7 +64,7 @@ class NativeActivity : AppCompatActivity() {
         val list = findViewById<RecyclerView>(R.id.list)
         list.layoutManager = LinearLayoutManager(this)
 
-        val itens = mutableListOf<Item>()
+        val itens = mutableListOf<Any>()
         for (item in 1..50) {
             itens.add(Item("Título do item $item", "Descrição do item $item"))
         }

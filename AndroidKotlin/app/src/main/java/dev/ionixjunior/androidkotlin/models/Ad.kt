@@ -1,4 +1,6 @@
 package dev.ionixjunior.androidkotlin.models
 
-class Ad(val headline: String, val body: String) {
+import android.graphics.drawable.Drawable
+
+class Ad(val image: Drawable?, val headline: String, val body: String) {
 }
