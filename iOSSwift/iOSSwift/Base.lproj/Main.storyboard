@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ze6-cq-nuP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ze6-cq-nuP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J3g-vW-kpF">
-                                <rect key="frame" x="20" y="108" width="374" height="130"/>
+                                <rect key="frame" x="20" y="108" width="374" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dC4-eJ-Gbb">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -63,6 +63,16 @@
                                         </state>
                                         <connections>
                                             <segue destination="TsG-EA-rDQ" kind="show" id="5Ev-Ru-nL5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elt-aw-prW">
+                                        <rect key="frame" x="0.0" y="150" width="374" height="30"/>
+                                        <color key="backgroundColor" red="0.1019607843" green="0.45098039220000002" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Native">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="l9g-Hi-7k0" kind="show" id="G7O-Sg-Yi6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -181,6 +191,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Teh-Te-1xP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-429" y="871"/>
+        </scene>
+        <!--Native-->
+        <scene sceneID="hEz-t7-dxI">
+            <objects>
+                <viewController id="l9g-Hi-7k0" customClass="NativeViewController" customModule="iOSSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MuN-rA-OoA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tZG-xF-iPR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Native" id="4Pe-wM-6Vg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MUF-wW-Esb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="397" y="871"/>
         </scene>
     </scenes>
     <resources>

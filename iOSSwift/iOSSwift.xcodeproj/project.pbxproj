@@ -14,6 +14,7 @@
 		7A50EE9F2616B3FA00DC9E13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A50EE9D2616B3FA00DC9E13 /* Main.storyboard */; };
 		7A50EEA12616B3FC00DC9E13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A50EEA02616B3FC00DC9E13 /* Assets.xcassets */; };
 		7A50EEA42616B3FC00DC9E13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A50EEA22616B3FC00DC9E13 /* LaunchScreen.storyboard */; };
+		7A55534D26D85952002CD471 /* NativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55534C26D85952002CD471 /* NativeViewController.swift */; };
 		7AB0E35426324632005BA522 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0E35326324632005BA522 /* InterstitialViewController.swift */; };
 		7AED6DDB2644BFD1004CA72D /* RewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AED6DDA2644BFD1004CA72D /* RewardedViewController.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		7A50EEA02616B3FC00DC9E13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A50EEA32616B3FC00DC9E13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A50EEA52616B3FC00DC9E13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A55534C26D85952002CD471 /* NativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeViewController.swift; sourceTree = "<group>"; };
 		7AA2AF680958EDE2AFFA1A9B /* Pods_iOSSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB0E35326324632005BA522 /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		7AED6DDA2644BFD1004CA72D /* RewardedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				7A50EEA52616B3FC00DC9E13 /* Info.plist */,
 				7AB0E35326324632005BA522 /* InterstitialViewController.swift */,
 				7AED6DDA2644BFD1004CA72D /* RewardedViewController.swift */,
+				7A55534C26D85952002CD471 /* NativeViewController.swift */,
 			);
 			path = iOSSwift;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				7AB0E35426324632005BA522 /* InterstitialViewController.swift in Sources */,
 				7A50EE9C2616B3FA00DC9E13 /* BannerViewController.swift in Sources */,
 				7AED6DDB2644BFD1004CA72D /* RewardedViewController.swift in Sources */,
+				7A55534D26D85952002CD471 /* NativeViewController.swift in Sources */,
 				7A50EE982616B3F900DC9E13 /* AppDelegate.swift in Sources */,
 				7A50EE9A2616B3FA00DC9E13 /* SceneDelegate.swift in Sources */,
 			);
