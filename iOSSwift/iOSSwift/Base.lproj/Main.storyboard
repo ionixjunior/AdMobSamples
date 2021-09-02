@@ -311,6 +311,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="xv8-1O-MKa" secondAttribute="trailing" constant="15" id="kUL-I4-FJj"/>
                                                 <constraint firstItem="xv8-1O-MKa" firstAttribute="leading" secondItem="Ca1-D9-lWp" secondAttribute="leading" constant="15" id="zxF-Ao-PJR"/>
                                             </constraints>
+                                            <connections>
+                                                <outlet property="bodyView" destination="Cih-W9-R3G" id="GAD-Nat-Bdy"/>
+                                                <outlet property="headlineView" destination="l4f-hB-FE1" id="GAD-Nat-Hdl"/>
+                                                <outlet property="iconView" destination="NhB-Y9-DeP" id="GAD-Nat-Ico"/>
+                                            </connections>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
