@@ -261,7 +261,7 @@
                                             <outlet property="titulo" destination="v7l-y0-EvO" id="boM-pR-7ej"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdViewCell" rowHeight="80" id="eVL-im-RLh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdViewCell" rowHeight="80" id="eVL-im-RLh" customClass="AdViewCell" customModule="iOSSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="104.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eVL-im-RLh" id="Ca1-D9-lWp" customClass="GADNativeAdView">

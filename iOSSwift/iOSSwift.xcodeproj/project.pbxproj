@@ -18,6 +18,7 @@
 		7A55534F26D8618B002CD471 /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55534E26D8618B002CD471 /* ItemViewCell.swift */; };
 		7A55535126D86787002CD471 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55535026D86787002CD471 /* Item.swift */; };
 		7AB0E35426324632005BA522 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0E35326324632005BA522 /* InterstitialViewController.swift */; };
+		7AC26BBE26E19B25008CFA90 /* AdViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC26BBD26E19B25008CFA90 /* AdViewCell.swift */; };
 		7AED6DDB2644BFD1004CA72D /* RewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AED6DDA2644BFD1004CA72D /* RewardedViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		7A55535026D86787002CD471 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		7AA2AF680958EDE2AFFA1A9B /* Pods_iOSSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB0E35326324632005BA522 /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
+		7AC26BBD26E19B25008CFA90 /* AdViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewCell.swift; sourceTree = "<group>"; };
 		7AED6DDA2644BFD1004CA72D /* RewardedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedViewController.swift; sourceTree = "<group>"; };
 		83DC6633884044ED087C035E /* Pods-iOSSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSSwift.release.xcconfig"; path = "Target Support Files/Pods-iOSSwift/Pods-iOSSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 				7A55534C26D85952002CD471 /* NativeViewController.swift */,
 				7A55534E26D8618B002CD471 /* ItemViewCell.swift */,
 				7A55535026D86787002CD471 /* Item.swift */,
+				7AC26BBD26E19B25008CFA90 /* AdViewCell.swift */,
 			);
 			path = iOSSwift;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				7A55535126D86787002CD471 /* Item.swift in Sources */,
 				7A55534F26D8618B002CD471 /* ItemViewCell.swift in Sources */,
 				7A50EE982616B3F900DC9E13 /* AppDelegate.swift in Sources */,
+				7AC26BBE26E19B25008CFA90 /* AdViewCell.swift in Sources */,
 				7A50EE9A2616B3FA00DC9E13 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
