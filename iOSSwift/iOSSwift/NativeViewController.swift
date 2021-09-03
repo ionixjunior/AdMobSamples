@@ -5,7 +5,7 @@ class NativeViewController: UIViewController, GADNativeAdLoaderDelegate, UITable
     
     @IBOutlet weak var tableView: UITableView!
     var adLoader: GADAdLoader!
-    var items: [Item] = []
+    var items: [BaseItem] = []
     
     override func viewDidLoad() {
         tableView.delegate = self
@@ -28,7 +28,11 @@ class NativeViewController: UIViewController, GADNativeAdLoaderDelegate, UITable
     }
     
     func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
-        print("O anúncio nativo foi carregado")
+        print("O anúncio nativo foi carregado\nTítulo: \(nativeAd.headline)\nDescrição: \(nativeAd.body)")
+        
+        let item = AdItem(titulo: nativeAd.headline!, descricao: nativeAd.body!)
+        items.append(item)
+        tableView.reloadData()
     }
     
     func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
@@ -40,11 +44,18 @@ class NativeViewController: UIViewController, GADNativeAdLoaderDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemViewCell") as! ItemViewCell
+        if let item = items[indexPath.row] as? Item {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ItemViewCell") as! ItemViewCell
+            cell.bind(item: item)
+            return cell
+        }
         
-        let item = items[indexPath.row]
-        cell.bind(item: item)
+        if let item = items[indexPath.row] as? AdItem {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AdViewCell") as! AdViewCell
+            cell.bind(item: item)
+            return cell
+        }
         
-        return cell
+        return UITableViewCell()
     }
 }

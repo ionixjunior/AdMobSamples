@@ -1,16 +1,12 @@
 import UIKit
-import GoogleMobileAds
 
 class AdViewCell: UITableViewCell {
-    func bind(item: Item) {
-        if let nativeAdView = contentView as? GADNativeAdView {
-            if let headlineLabel = nativeAdView.headlineView as? UILabel {
-                headlineLabel.text = item.titulo
-            }
-            
-            if let bodyLabel = nativeAdView.bodyView as? UILabel {
-                bodyLabel.text = item.descricao
-            }
-        }
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var headline: UILabel!
+    @IBOutlet weak var body: UILabel!
+    
+    func bind(item: AdItem) {
+        headline.text = item.titulo
+        body.text = item.descricao
     }
 }

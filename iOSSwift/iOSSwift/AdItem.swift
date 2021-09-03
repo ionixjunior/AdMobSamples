@@ -1,6 +1,4 @@
-import UIKit
-
-class Item: BaseItem {
+class AdItem: BaseItem {
     var titulo: String
     var descricao: String
     

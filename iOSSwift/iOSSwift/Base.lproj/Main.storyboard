@@ -264,7 +264,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdViewCell" rowHeight="80" id="eVL-im-RLh" customClass="AdViewCell" customModule="iOSSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="104.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eVL-im-RLh" id="Ca1-D9-lWp" customClass="GADNativeAdView">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eVL-im-RLh" id="Ca1-D9-lWp">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -285,7 +285,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título propangda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4f-hB-FE1">
                                                                     <rect key="frame" x="0.0" y="0.0" width="314" height="40"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="40" id="VUQ-c2-mtd"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="2FV-zw-nvU"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -294,7 +294,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição propaganda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cih-W9-R3G">
                                                                     <rect key="frame" x="0.0" y="40" width="314" height="40"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="40" id="ZDB-WI-Y4o"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="VLZ-Hn-kdr"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -303,20 +303,25 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="w7f-no-U57" firstAttribute="top" secondItem="xv8-1O-MKa" secondAttribute="top" id="6ih-jS-GVb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="w7f-no-U57" secondAttribute="bottom" id="F7v-Zs-Uv7"/>
+                                                        <constraint firstAttribute="height" constant="80" id="Smv-49-jow"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="xv8-1O-MKa" firstAttribute="top" secondItem="Ca1-D9-lWp" secondAttribute="top" id="CLa-K8-Pn4"/>
-                                                <constraint firstAttribute="bottom" secondItem="xv8-1O-MKa" secondAttribute="bottom" id="WTH-nT-Mde"/>
-                                                <constraint firstAttribute="trailing" secondItem="xv8-1O-MKa" secondAttribute="trailing" constant="15" id="kUL-I4-FJj"/>
-                                                <constraint firstItem="xv8-1O-MKa" firstAttribute="leading" secondItem="Ca1-D9-lWp" secondAttribute="leading" constant="15" id="zxF-Ao-PJR"/>
+                                                <constraint firstItem="xv8-1O-MKa" firstAttribute="top" secondItem="Ca1-D9-lWp" secondAttribute="top" id="YUX-SX-c0G"/>
+                                                <constraint firstItem="xv8-1O-MKa" firstAttribute="leading" secondItem="Ca1-D9-lWp" secondAttribute="leading" constant="15" id="end-xv-deM"/>
+                                                <constraint firstAttribute="bottom" secondItem="xv8-1O-MKa" secondAttribute="bottom" id="uoE-bF-I7F"/>
+                                                <constraint firstAttribute="trailing" secondItem="xv8-1O-MKa" secondAttribute="trailing" constant="15" id="yzg-a2-Lyt"/>
                                             </constraints>
-                                            <connections>
-                                                <outlet property="bodyView" destination="Cih-W9-R3G" id="GAD-Nat-Bdy"/>
-                                                <outlet property="headlineView" destination="l4f-hB-FE1" id="GAD-Nat-Hdl"/>
-                                                <outlet property="iconView" destination="NhB-Y9-DeP" id="GAD-Nat-Ico"/>
-                                            </connections>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="body" destination="Cih-W9-R3G" id="XSi-Pd-CLr"/>
+                                            <outlet property="headline" destination="l4f-hB-FE1" id="1fz-cL-sVI"/>
+                                            <outlet property="icon" destination="NhB-Y9-DeP" id="fRv-mv-RmK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
