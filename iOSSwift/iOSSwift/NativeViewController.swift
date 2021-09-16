@@ -27,12 +27,20 @@ class NativeViewController: UIViewController, GADNativeAdLoaderDelegate, UITable
         adLoader.load(GADRequest())
     }
     
+    var adDefaultDistance = 5;
+    var adNextPosition = 5;
+    
     func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
         print("O anúncio nativo foi carregado\nTítulo: \(nativeAd.headline)\nDescrição: \(nativeAd.body)")
         
+        if adNextPosition > items.count {
+            adNextPosition = items.count
+        }
+        
         let item = AdItem(titulo: nativeAd.headline!, descricao: nativeAd.body!)
-        items.append(item)
+        items.insert(item, at: adNextPosition)
         tableView.reloadData()
+        adNextPosition += adDefaultDistance + 1
     }
     
     func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
