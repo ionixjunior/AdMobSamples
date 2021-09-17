@@ -39,7 +39,10 @@ class NativeViewController: UIViewController, GADNativeAdLoaderDelegate, UITable
         
         let item = AdItem(titulo: nativeAd.headline!, descricao: nativeAd.body!)
         items.insert(item, at: adNextPosition)
-        tableView.reloadData()
+        
+        let indexPaths = [IndexPath.init(row: adNextPosition, section: 0)]
+        tableView.insertRows(at:indexPaths, with: .automatic)
+
         adNextPosition += adDefaultDistance + 1
     }
     
