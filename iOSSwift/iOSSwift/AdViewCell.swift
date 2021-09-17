@@ -8,5 +8,6 @@ class AdViewCell: UITableViewCell {
     func bind(item: AdItem) {
         headline.text = item.titulo
         body.text = item.descricao
+        icon.image = item.icone
     }
 }

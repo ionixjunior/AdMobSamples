@@ -37,7 +37,7 @@ class NativeViewController: UIViewController, GADNativeAdLoaderDelegate, UITable
             adNextPosition = items.count
         }
         
-        let item = AdItem(titulo: nativeAd.headline!, descricao: nativeAd.body!)
+        let item = AdItem(titulo: nativeAd.headline!, descricao: nativeAd.body!, icone: nativeAd.icon?.image)
         items.insert(item, at: adNextPosition)
         
         let indexPaths = [IndexPath.init(row: adNextPosition, section: 0)]
