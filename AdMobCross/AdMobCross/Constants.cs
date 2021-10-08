@@ -46,5 +46,19 @@ namespace AdMobCross
                 return string.Empty;
             }
         }
+
+        public static string AdNativeId
+        {
+            get
+            {
+                if (DeviceInfo.Platform == DevicePlatform.Android)
+                    return "ca-app-pub-3940256099942544/2247696110";
+
+                if (DeviceInfo.Platform == DevicePlatform.iOS)
+                    return "ca-app-pub-3940256099942544/3986624511";
+
+                return string.Empty;
+            }
+        }
     }
 }
