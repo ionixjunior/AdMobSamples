@@ -67,6 +67,7 @@
     <Compile Include="Implementations\InterstitialAndroid.cs" />
     <Compile Include="Renderers\LifecycleLitePageRenderer.cs" />
     <Compile Include="Implementations\RewardedAndroid.cs" />
+    <Compile Include="Implementations\NativeAndroid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
