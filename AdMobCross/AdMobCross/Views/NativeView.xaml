@@ -5,7 +5,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Native">
     <ContentPage.Content>
-        <ListView>
+        <ListView
+            CachingStrategy="RecycleElement"
+            HasUnevenRows="True"
+            ItemsSource="{Binding Items}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -26,11 +29,11 @@
                                 <StackLayout Grid.Column="1" Padding="10">
                                     <Label
                                         FontSize="Medium"
-                                        Text="Título"
+                                        Text="{Binding Title}"
                                         TextColor="Black" />
                                     <Label
                                         FontSize="Medium"
-                                        Text="Descrição"
+                                        Text="{Binding Description}"
                                         TextColor="Black"
                                         VerticalOptions="EndAndExpand" />
                                 </StackLayout>
