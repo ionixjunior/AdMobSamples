@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using AdMobCross.ViewModels;
 using Xamarin.Forms;
 
 namespace AdMobCross.Views
@@ -10,6 +10,7 @@ namespace AdMobCross.Views
         public NativeView()
         {
             InitializeComponent();
+            BindingContext = new NativeViewModel();
         }
     }
 }
