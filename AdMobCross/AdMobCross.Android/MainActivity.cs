@@ -23,6 +23,7 @@ namespace AdMobCross.Droid
 
             DependencyService.Register<IInterstitial, InterstitialAndroid>();
             DependencyService.Register<IRewarded, RewardedAndroid>();
+            DependencyService.Register<INative, NativeAndroid>();
 
             LoadApplication(new App());
         }
