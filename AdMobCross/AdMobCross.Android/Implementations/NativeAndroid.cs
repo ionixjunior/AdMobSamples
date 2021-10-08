@@ -29,7 +29,6 @@ namespace AdMobCross.Droid.Implementations
 
             public void OnUnifiedNativeAdLoaded(UnifiedNativeAd ad)
             {
-                Console.WriteLine($"Título: {ad.Headline} - Descrição: {ad.Body}");
                 _nativeAndroid.AdLoaded?.Invoke(new Models.NativeAd(ad.Headline, ad.Body, ad.Icon.Uri.ToString()));
             }
         }
