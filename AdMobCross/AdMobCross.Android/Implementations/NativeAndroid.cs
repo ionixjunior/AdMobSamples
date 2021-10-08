@@ -7,6 +7,8 @@ namespace AdMobCross.Droid.Implementations
 {
     public class NativeAndroid : INative
     {
+        public event Action<Models.NativeAd> AdLoaded;
+
         public void Load(string adId, int numberOfAds)
         {
             var adLoader = new AdLoader.Builder(Xamarin.Essentials.Platform.AppContext, adId);
