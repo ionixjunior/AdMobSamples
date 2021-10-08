@@ -12,7 +12,7 @@ namespace AdMobCross.Droid.Implementations
         public void Load(string adId, int numberOfAds)
         {
             var adLoader = new AdLoader.Builder(Xamarin.Essentials.Platform.AppContext, adId);
-            adLoader.ForUnifiedNativeAd(new UnifiedNativeAdLoadedListener());
+            adLoader.ForUnifiedNativeAd(new UnifiedNativeAdLoadedListener(this));
 
             var adRequest = new AdRequest.Builder().Build();
             adLoader.Build().LoadAds(adRequest, numberOfAds);
@@ -20,9 +20,17 @@ namespace AdMobCross.Droid.Implementations
 
         private class UnifiedNativeAdLoadedListener : AdListener, UnifiedNativeAd.IOnUnifiedNativeAdLoadedListener
         {
+            private readonly NativeAndroid _nativeAndroid;
+
+            public UnifiedNativeAdLoadedListener(NativeAndroid nativeAndroid)
+            {
+                _nativeAndroid = nativeAndroid;
+            }
+
             public void OnUnifiedNativeAdLoaded(UnifiedNativeAd ad)
             {
                 Console.WriteLine($"Título: {ad.Headline} - Descrição: {ad.Body}");
+                _nativeAndroid.AdLoaded?.Invoke(new Models.NativeAd(ad.Headline, ad.Body, ad.Icon.Uri.ToString()));
             }
         }
     }
