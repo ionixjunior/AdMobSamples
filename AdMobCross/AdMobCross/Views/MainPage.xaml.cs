@@ -29,5 +29,10 @@ namespace AdMobCross.Views
         {
             await Navigation.PushAsync(new RewardedView());
         }
+
+        private async void OnNativeClicked(object _, EventArgs __)
+        {
+            await Navigation.PushAsync(new NativeView());
+        }
     }
 }

@@ -19,5 +19,10 @@
             Clicked="OnRewardedClicked"
             FontAttributes="Bold"
             Text="Rewarded" />
+
+        <Button
+            Clicked="OnNativeClicked"
+            FontAttributes="Bold"
+            Text="Native" />
     </StackLayout>
 </ContentPage>
