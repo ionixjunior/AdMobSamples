@@ -8,21 +8,21 @@ namespace AdMobCross.ViewModels
     public class NativeViewModel
     {
         private readonly INative _native;
-        public ObservableCollection<NativeItem> Items { get; }
+        public ObservableCollection<Item> Items { get; }
 
         public NativeViewModel(INative native)
         {
             _native = native;
-            Items = new ObservableCollection<NativeItem>(GetItems());
+            Items = new ObservableCollection<Item>(GetItems());
         }
 
-        private List<NativeItem> GetItems()
+        private List<Item> GetItems()
         {
-            var items = new List<NativeItem>();
+            var items = new List<Item>();
 
             for (var index = 1; index <= 50; index++)
             {
-                items.Add(new NativeItem($"Título {index}", $"Descrição {index}"));
+                items.Add(new Item($"Título {index}", $"Descrição {index}"));
             }
 
             return items;

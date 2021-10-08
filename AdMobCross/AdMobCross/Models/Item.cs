@@ -1,11 +1,11 @@
 ﻿namespace AdMobCross.Models
 {
-    public struct NativeItem
+    public struct Item
     {
         public string Title { get; }
         public string Description { get; }
 
-        public NativeItem(string title, string description)
+        public Item(string title, string description)
         {
             Title = title;
             Description = description;
