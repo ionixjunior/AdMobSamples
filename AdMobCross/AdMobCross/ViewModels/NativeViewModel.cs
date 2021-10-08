@@ -1,15 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using AdMobCross.Interfaces;
 using AdMobCross.Models;
 
 namespace AdMobCross.ViewModels
 {
     public class NativeViewModel
     {
+        private readonly INative _native;
         public ObservableCollection<NativeItem> Items { get; }
 
-        public NativeViewModel()
+        public NativeViewModel(INative native)
         {
+            _native = native;
             Items = new ObservableCollection<NativeItem>(GetItems());
         }
 
