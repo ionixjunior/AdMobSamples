@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ViewCell
+    x:Class="AdMobCross.ViewCells.AdCell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ViewCell.View>
+        <Grid
+            ColumnDefinitions="80,*"
+            ColumnSpacing="0"
+            HeightRequest="80"
+            VerticalOptions="Start">
+            <BoxView
+                Grid.Column="0"
+                BackgroundColor="Green"
+                HeightRequest="70"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="70" />
+
+            <StackLayout Grid.Column="1" Padding="10">
+                <Label
+                    FontSize="Medium"
+                    Text="{Binding Title}"
+                    TextColor="Black" />
+                <Label
+                    FontSize="Medium"
+                    Text="{Binding Description}"
+                    TextColor="Black"
+                    VerticalOptions="EndAndExpand" />
+            </StackLayout>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>
