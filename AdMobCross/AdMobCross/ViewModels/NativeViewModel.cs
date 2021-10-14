@@ -40,6 +40,7 @@ namespace AdMobCross.ViewModels
         private void OnAdLoaded(NativeAd nativeAd)
         {
             Console.WriteLine($"A propaganda chegou na view!!! {nativeAd.Title}");
+            Items.Add(new Item(nativeAd.Title, nativeAd.Description, ItemType.Ad));
         }
 
         internal void OnDestroyed()
