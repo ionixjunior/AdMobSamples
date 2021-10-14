@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using AdMobCross.Interfaces;
 using AdMobCross.Models;
 
@@ -26,6 +28,22 @@ namespace AdMobCross.ViewModels
             }
 
             return items;
+        }
+
+        internal void OnCreated()
+        {
+            Task.Run(() => _native.Load(Constants.AdNativeId, 5));
+            _native.AdLoaded += OnAdLoaded;
+        }
+
+        private void OnAdLoaded(NativeAd nativeAd)
+        {
+            Console.WriteLine($"A propaganda chegou na view!!! {nativeAd.Title}");
+        }
+
+        internal void OnDestroyed()
+        {
+            _native.AdLoaded -= OnAdLoaded;
         }
     }
 }
