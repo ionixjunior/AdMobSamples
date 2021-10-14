@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using AdMobCross.Enums;
 using AdMobCross.Interfaces;
 using AdMobCross.Models;
 
@@ -24,7 +25,7 @@ namespace AdMobCross.ViewModels
 
             for (var index = 1; index <= 50; index++)
             {
-                items.Add(new Item($"Título {index}", $"Descrição {index}"));
+                items.Add(new Item($"Título {index}", $"Descrição {index}", ItemType.Item));
             }
 
             return items;
