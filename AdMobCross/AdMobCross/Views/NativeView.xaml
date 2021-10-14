@@ -3,45 +3,17 @@
     x:Class="AdMobCross.Views.NativeView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:templates="clr-namespace:AdMobCross.DataTemplateSelectors"
     Title="Native">
+    <ContentPage.Resources>
+        <templates:NativeViewDataTemplateSelector x:Key="nativeViewTemplate" />
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <ListView
             CachingStrategy="RecycleElement"
             HasUnevenRows="True"
-            ItemsSource="{Binding Items}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.View>
-                            <Grid
-                                ColumnDefinitions="80,*"
-                                ColumnSpacing="0"
-                                HeightRequest="80"
-                                VerticalOptions="Start">
-                                <BoxView
-                                    Grid.Column="0"
-                                    BackgroundColor="Red"
-                                    HeightRequest="70"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center"
-                                    WidthRequest="70" />
-
-                                <StackLayout Grid.Column="1" Padding="10">
-                                    <Label
-                                        FontSize="Medium"
-                                        Text="{Binding Title}"
-                                        TextColor="Black" />
-                                    <Label
-                                        FontSize="Medium"
-                                        Text="{Binding Description}"
-                                        TextColor="Black"
-                                        VerticalOptions="EndAndExpand" />
-                                </StackLayout>
-                            </Grid>
-                        </ViewCell.View>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            ItemTemplate="{StaticResource nativeViewTemplate}"
+            ItemsSource="{Binding Items}" />
     </ContentPage.Content>
 </ContentPage>
