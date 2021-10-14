@@ -7,7 +7,7 @@
         <Grid
             ColumnDefinitions="80,*"
             ColumnSpacing="0"
-            HeightRequest="80"
+            HeightRequest="120"
             VerticalOptions="Start">
             <BoxView
                 Grid.Column="0"
