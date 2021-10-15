@@ -52,6 +52,7 @@ namespace AdMobCross.ViewModels
         internal void OnDestroyed()
         {
             _native.AdLoaded -= OnAdLoaded;
+            _native.Dispose();
         }
     }
 }
