@@ -21,6 +21,11 @@ namespace AdMobCross.Droid.Implementations
             adLoader.Build().LoadAds(adRequest, numberOfAds);
         }
 
+        public void Dispose()
+        {
+            _ads.ForEach(x => x.Dispose());
+        }
+
         private class UnifiedNativeAdLoadedListener : AdListener, UnifiedNativeAd.IOnUnifiedNativeAdLoadedListener
         {
             private readonly NativeAndroid _nativeAndroid;
