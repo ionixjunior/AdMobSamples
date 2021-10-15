@@ -42,8 +42,6 @@ namespace AdMobCross.ViewModels
 
         private void OnAdLoaded(NativeAd nativeAd)
         {
-            Console.WriteLine($"A propaganda chegou na view!!! {nativeAd.Title}");
-
             if (_adNextPosition > Items.Count)
                 _adNextPosition = Items.Count;
 
