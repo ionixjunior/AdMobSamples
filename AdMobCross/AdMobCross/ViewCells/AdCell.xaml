@@ -9,11 +9,11 @@
             ColumnSpacing="0"
             HeightRequest="120"
             VerticalOptions="Start">
-            <BoxView
+            <Image
                 Grid.Column="0"
-                BackgroundColor="Green"
                 HeightRequest="70"
                 HorizontalOptions="Center"
+                Source="{Binding Image}"
                 VerticalOptions="Center"
                 WidthRequest="70" />
 

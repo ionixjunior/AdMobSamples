@@ -25,7 +25,7 @@ namespace AdMobCross.ViewModels
 
             for (var index = 1; index <= 50; index++)
             {
-                items.Add(new Item($"Título {index}", $"Descrição {index}", ItemType.Item));
+                items.Add(new Item($"Título {index}", $"Descrição {index}", string.Empty, ItemType.Item));
             }
 
             return items;
@@ -45,7 +45,7 @@ namespace AdMobCross.ViewModels
             if (_adNextPosition > Items.Count)
                 _adNextPosition = Items.Count;
 
-            Items.Insert(_adNextPosition, new Item(nativeAd.Title, nativeAd.Description, ItemType.Ad));
+            Items.Insert(_adNextPosition, new Item(nativeAd.Title, nativeAd.Description, nativeAd.Image, ItemType.Ad));
             _adNextPosition += AdDefaultDistance + 1;
         }
 
