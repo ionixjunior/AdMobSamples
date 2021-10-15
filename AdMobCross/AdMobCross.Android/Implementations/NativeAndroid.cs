@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using AdMobCross.Interfaces;
 using Android.Gms.Ads;
 using Android.Gms.Ads.Formats;
@@ -7,6 +8,8 @@ namespace AdMobCross.Droid.Implementations
 {
     public class NativeAndroid : INative
     {
+        private List<UnifiedNativeAd> _ads = new List<UnifiedNativeAd>();
+
         public event Action<Models.NativeAd> AdLoaded;
 
         public void Load(string adId, int numberOfAds)
@@ -29,6 +32,7 @@ namespace AdMobCross.Droid.Implementations
 
             public void OnUnifiedNativeAdLoaded(UnifiedNativeAd ad)
             {
+                _nativeAndroid._ads.Add(ad);
                 _nativeAndroid.AdLoaded?.Invoke(new Models.NativeAd(ad.Headline, ad.Body, ad.Icon.Uri.ToString()));
             }
         }
