@@ -37,10 +37,18 @@ namespace AdMobCross.ViewModels
             _native.AdLoaded += OnAdLoaded;
         }
 
+        private const int AdDefaultDistance = 5;
+        private int _adNextPosition = AdDefaultDistance;
+
         private void OnAdLoaded(NativeAd nativeAd)
         {
             Console.WriteLine($"A propaganda chegou na view!!! {nativeAd.Title}");
-            Items.Add(new Item(nativeAd.Title, nativeAd.Description, ItemType.Ad));
+
+            if (_adNextPosition > Items.Count)
+                _adNextPosition = Items.Count;
+
+            Items.Insert(_adNextPosition, new Item(nativeAd.Title, nativeAd.Description, ItemType.Ad));
+            _adNextPosition += AdDefaultDistance + 1;
         }
 
         internal void OnDestroyed()
