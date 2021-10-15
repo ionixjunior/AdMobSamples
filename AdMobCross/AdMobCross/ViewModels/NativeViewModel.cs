@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 using AdMobCross.Enums;
 using AdMobCross.Interfaces;
 using AdMobCross.Models;
@@ -33,8 +32,8 @@ namespace AdMobCross.ViewModels
 
         internal void OnCreated()
         {
-            Task.Run(() => _native.Load(Constants.AdNativeId, 5));
             _native.AdLoaded += OnAdLoaded;
+            _native.Load(Constants.AdNativeId, 5);
         }
 
         private const int AdDefaultDistance = 5;
