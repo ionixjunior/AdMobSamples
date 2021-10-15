@@ -77,6 +77,7 @@
     <Compile Include="Implementations\InterstitialiOS.cs" />
     <Compile Include="Renderers\LifecycleLitePageRenderer.cs" />
     <Compile Include="Implementations\RewardediOS.cs" />
+    <Compile Include="Implementations\NativeiOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
