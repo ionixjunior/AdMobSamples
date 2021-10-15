@@ -30,6 +30,7 @@ namespace AdMobCross.iOS
 
             DependencyService.Register<IInterstitial, InterstitialiOS>();
             DependencyService.Register<IRewarded, RewardediOS>();
+            DependencyService.Register<INative, NativeiOS>();
 
             LoadApplication(new App());
 
